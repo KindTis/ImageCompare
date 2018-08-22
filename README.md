@@ -1,4 +1,4 @@
-KiWi
+ImageCompare
 ====
 
-KindTis&#39;s KiWi GameEngine
+Capture Screen and Compare with Src Image
