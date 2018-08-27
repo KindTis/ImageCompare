@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCompare"
         mc:Ignorable="d"
-        Title="Image Compare" Height="73.315" Width="216.011">
+        Title="Image Compare" Height="112.982" Width="379.012">
     <Grid>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="ScreenCapture"/>
+        <Button Content="Capture" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="89" Click="ScreenCapture" Height="36"/>
+        <TextBox Name="Image1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="112,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="249"/>
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Drawing;
 using ShareX.ScreenCaptureLib;
@@ -18,10 +19,13 @@ namespace ImageCompare
 
         private void ScreenCapture(object sender, RoutedEventArgs e)
         {
-            Rectangle rect = new Rectangle(100, 100, 640, 480);
+            Rectangle rect = new Rectangle();
+            RegionCaptureOptions option = new RegionCaptureOptions();
+            RegionCaptureTasks.GetRectangleRegion(out rect, option);
+            Image1.Text = rect.ToString();
             Screenshot screen = new Screenshot();
-            Image img = screen.CaptureRectangle(rect);
-            img.Save("c:\\some.jpg");
+            Image copyImg = screen.CaptureRectangle(rect);
+            copyImg.Save("c:\\some.jpg");
         }
     }
 }
