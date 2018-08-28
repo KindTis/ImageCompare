@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:ImageCompare"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <local:MockMasterViewModel x:Key="MockMasterViewModel"/>
     </Application.Resources>
 </Application>

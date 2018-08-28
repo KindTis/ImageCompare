@@ -5,9 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCompare"
         mc:Ignorable="d"
-        Title="Image Compare" Height="112.982" Width="379.012">
+        d:DataContext="{StaticResource ResourceKey=MockMasterViewModel}"
+        Title="Image Compare" Height="316" Width="564.667">
     <Grid>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="89" Click="ScreenCapture" Height="36"/>
-        <TextBox Name="Image1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="112,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="249"/>
+        <Button Content="Capture" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Click="ScreenCapture" Height="35"/>
+        <Button Content="CaptureDup" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="90" Click="DuplicateCapture" Height="35"/>
+        <Button Content="Compare" HorizontalAlignment="Left" Height="35" Margin="10,90,0,0" VerticalAlignment="Top" Width="90" Click="CompareImage"/>
+        <ListBox Name="CompareList" ItemsSource="{Binding Path=Items}" Margin="110,10,10,10" Width="435">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImagePath}" Width="100" Height="40" Grid.Column="0"/>
+                        <TextBlock Text="{Binding Region}" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Key}" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
