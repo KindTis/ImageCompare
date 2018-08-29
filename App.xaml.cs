@@ -23,8 +23,8 @@ namespace ImageCompare
 
         public MockMasterViewModel()
         {
-            var item01 = new CompareListItem() { ImagePath = "d:\\Projects\\ImageCompare\\src.jpg", Region = "{ x: 100, y: 200, width: 500, height: 500 }", Key = "Key" };
-            var item02 = new CompareListItem() { ImagePath = "d:\\Projects\\ImageCompare\\dst.jpg", Region = "{ x: 0, y: 0, width: 300, height: 250 }", Key = "Key" };
+            var item01 = new CompareListItem() { strImagePath = "d:\\Projects\\ImageCompare\\src.jpg", rtRegion = new System.Drawing.Rectangle(0, 0, 300, 300), strKey = "Key" };
+            var item02 = new CompareListItem() { strImagePath = "d:\\Projects\\ImageCompare\\dst.jpg", rtRegion = new System.Drawing.Rectangle(10, 100, 500, 500), strKey = "Key" };
             Items = new ObservableCollection<CompareListItem>()
             {
                 item01, item02

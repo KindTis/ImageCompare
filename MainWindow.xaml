@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:ImageCompare"
         mc:Ignorable="d"
         d:DataContext="{StaticResource ResourceKey=MockMasterViewModel}"
-        Title="Image Compare" Height="316" Width="564.667">
+        Title="Image Compare" Height="316" Width="575.667">
     <Grid>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Click="ScreenCapture" Height="35"/>
-        <Button Content="CaptureDup" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="90" Click="DuplicateCapture" Height="35"/>
-        <Button Content="Compare" HorizontalAlignment="Left" Height="35" Margin="10,90,0,0" VerticalAlignment="Top" Width="90" Click="CompareImage"/>
-        <ListBox Name="CompareList" ItemsSource="{Binding Path=Items}" Margin="110,10,10,10" Width="435">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Click="ScreenCapture" Height="35"/>
+        <Button Name="btSetKey" Content="Set Key" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="90" Click="SetKey" Height="35"/>
+        <Button Name="btRun" Content="Run" HorizontalAlignment="Left" Height="35" Margin="10,90,0,0" VerticalAlignment="Top" Width="90" Click="Run"/>
+        <ListBox Name="lbCompareList" ItemsSource="{Binding Path=Items}" Margin="110,10,10,10" Width="435">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0">
@@ -20,9 +20,9 @@
                             <ColumnDefinition Width="200" />
                             <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="{Binding ImagePath}" Width="100" Height="40" Grid.Column="0"/>
-                        <TextBlock Text="{Binding Region}" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding Key}" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Source="{Binding strImagePath}" Width="100" Height="40" Grid.Column="0"/>
+                        <TextBlock Text="{Binding rtRegion}" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding strKey}" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
